@@ -1,0 +1,80 @@
+#include<stdio.h>
+#include<string.h>
+#include<conio.h>
+struct user
+{
+	char username[25];
+	char userpass[10];
+};
+struct username
+{
+	char personNamef[25];
+	char personNamel[25];
+	char Email[40];
+	long long phoneNo;
+	char address[100];
+	long long cardno;
+};
+void createAcc()
+{
+	struct username s;
+	struct user u;
+	printf("user Name: ");
+	scanf("%s",&u.username);
+	
+	printf("user password: ");
+	scanf("%s",&u.userpass);
+	
+	
+	printf("user Phone no: ");
+	scanf("%lld",&s.phoneNo);
+	
+	printf("person first name: ");
+	scanf("%s",&s.personNamef);
+
+	printf("person last name: ");
+	scanf("%s",&s.personNamel);
+		
+	printf("user email: ");
+	scanf("%s",&s.Email);
+	
+	printf("user address: ");
+	scanf("%s",s.address);
+	
+	printf("user card NO: ");
+	scanf("%lld",&s.cardno);
+	
+	printf("user Id: %s \n user Pass: %s \n User Name: %s %s \n Mobile No: %lld \n Email:  %s \n Address: %s \n Card No: %lld \n",u.username,u.userpass,s.personNamef,s.personNamel,s.phoneNo,s.Email,s.address,s.cardno);
+}
+void login()
+{
+	printf("welcome back \n");
+}
+int main()
+{
+	int n;
+	while(1)
+	{
+		printf("New Account press 1 \n login press 2 \n press any key for exit");
+		scanf("%d",&n);
+		
+		switch (n)
+		{
+			
+			case 1:
+			{
+				createAcc();
+				break;
+			}
+			case 2:
+			{
+				login();
+				break;
+			}
+			default :
+			{
+				exit(1);
+			}
+		}
+	}
+}

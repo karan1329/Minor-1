@@ -1,0 +1,29 @@
+void menu()                                        //Menu card display
+{
+	int ch;
+	printf("Enter 1) Snacks \n2)Main course \n3)Desert \n");
+	printf("Choice: ");
+	scanf("%d",&ch);
+	switch (ch)
+	{
+		case 1:
+			{
+				printf("1) Samosa:		10 rs/pcs \n2) Noodles:		99 rs/plate \n3) Nachos:		30 rs/Plate \n4) Burger:		70 rs/pcs \n5)Sandwich:		40 rs/pcs \n6)Pizza:		150 rs/pcs \n7) Chicken Roll:		60 rs/pcs");
+				break;
+			}
+		case 2:
+			{
+				printf("1) Rajma Chawal:		125 rs/plate \n2) Matar Paneer:		90 rs/plate \n3)khadai Paneer:		110 rs/plate \n4)Daal Makhni:		80 rs/plate \n5)Roti:		10 rs/pcs \n6) Veg Pulaw:		65 rs/plate \n7) Egg curry:		70 rs/plate \n8) Chicken tandoor:		130 rs/plate \n9)Butter Chicken Masala:		160 rs/pcs");
+				break;	
+			}
+		case 3:
+			{
+				printf("1) Pastry:		50 rs/pcs \n2) Choclate Brownie:		75 rs/pcs \n3) Cake:		250 rs/pound \n4) Milk Shake:		60 rs/glass \n5) Ice cream:		60 rs/pcs");
+				break;
+			}
+		default:
+		{
+			break;
+		}
+	}
+}

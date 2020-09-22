@@ -1,0 +1,19 @@
+struct dboy{
+	char dusername[25];
+	char dpass[16];
+};
+void deliverystatus()
+{
+	
+}
+void deliveryboy()
+{
+	struct dboy d;
+	printf("Enter username: ");
+	scanf("%c",&d.dusername);
+	
+	printf("Enter pass: ");
+	scanf("%f",&d.dpass);
+	
+	deliverystatus();                                   //check availability of delivery
+}

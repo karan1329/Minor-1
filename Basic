@@ -1,6 +1,5 @@
 #include<stdio.h>
 #include<string.h>
-#include<conio.h>
 struct user                          // user login and passsword structure
 {
 	char username[25];
@@ -15,53 +14,17 @@ struct username                         // user details structure
 	char address[100];
 	long long cardno;
 };
-struct dboy{
-	char dusername[25];
-	char dpass[16];
-};
 
-void menu()                                        //Menu card display
-{
-	int ch;
-	printf("Enter 1) Snacks \n2)Main course \n3)Desert \n");
-	printf("Choice: ");
-	scanf("%d",&ch);
-	switch (ch)
-	{
-		case 1:
-			{
-				printf("1) Samosa:		10 rs/pcs \n2) Noodles:		99 rs/plate \n3) Nachos:		30 rs/Plate \n4) Burger:		70 rs/pcs \n5)Sandwich:		40 rs/pcs \n6)Pizza:		150 rs/pcs \n7) Chicken Roll:		60 rs/pcs");
-				break;
-			}
-		case 2:
-			{
-				printf("1) Rajma Chawal:		125 rs/plate \n2) Matar Paneer:		90 rs/plate \n3)khadai Paneer:		110 rs/plate \n4)Daal Makhni:		80 rs/plate \n5)Roti:		10 rs/pcs \n6) Veg Pulaw:		65 rs/plate \n7) Egg curry:		70 rs/plate \n8) Chicken tandoor:		130 rs/plate \n9)Butter Chicken Masala:		160 rs/pcs");
-				break;	
-			}
-		case 3:
-			{
-				printf("1) Pastry:		50 rs/pcs \n2) Choclate Brownie:		75 rs/pcs \n3) Cake:		250 rs/pound \n4) Milk Shake:		60 rs/glass \n5) Ice cream:		60 rs/pcs");
-				break;
-			}
-		default:
-		{
-			break;
-		}
-	}
-}
-void deliverystatus()
-{
-	
-}
-void createAcc()                       //new account creation
+/*void createAcc()                       //new account creation
 {
 	struct username s;
-	struct user u;
+	struct user u[2];
+	
 	printf("user Name: ");
-	scanf("%s",&u.username);
+	scanf("%s",&u[0].username);
 	
 	printf("user password: ");
-	scanf("%s",&u.userpass);
+	scanf("%s",&u[0].userpass);
 	
 	
 	printf("user Phone no: ");
@@ -85,54 +48,53 @@ void createAcc()                       //new account creation
 	printf("user Id: %s \n user Pass: %s \n User Name: %s %s \n Mobile No: %lld \n Email:  %s \n Address: %s \n Card No: %lld \n",u.username,u.userpass,s.personNamef,s.personNamel,s.phoneNo,s.Email,s.address,s.cardno);
 	
 	
-}
+}*/
 void login()                                                //old user login
 {
 	printf("welcome back \n");
+	struct user u[2];       
+	int i=0;
 	
+	for(i=0;i<2;i++)
+	{
+		printf("Enter user: ");
+		scanf("%s",&u[i].username);
+		printf("Enter pass: ");
+		scanf("%s",&u[i].userpass);
+	}
 	
+	char uname[25];
+	
+	printf("\nEnter the user name: ");
+	scanf("%s",&uname);
+	
+	int flag=0;
+	for(i=0;i<2;i++)
+	{
+		if(strcmp(u[i].username,uname)==0)
+		{
+			char pass[10];
+			flag=1;
+			printf("Enter password: ");
+			scanf("%s",&pass);
+			
+			if(strcmp(pass,u[i].userpass)==0)
+			{
+				printf("welcome: \n");
+			}
+			else
+			{
+				printf("Wrong Password");
+			}
+			break;
+		}	
+	}
+	if(flag==0)
+	printf("No user found");
 }
-void deliveryboy()
-{
-	struct dboy d;
-	printf("Enter username: ");
-	scanf("%c",&d.dusername);
-	
-	printf("Enter pass: ");
-	scanf("%f",&d.dpass);
-	
-	deliverystatus();                                   //check availability of delivery
-}
+
 int main()
 {
-	int n;
-	while(1)
-	{
-		printf("New Account press 1 \n login press 2 \n press 3 if you are delvery boy \n press any key for exit");
-		scanf("%d",&n);
-		
-		switch (n)
-		{
-			
-			case 1:
-			{
-				createAcc();
-				break;
-			}
-			case 2:
-			{
-				login();
-				break;
-			}
-			case 3:
-				{
-					deliveryboy();
-					break;
-				}
-			default :
-			{
-				exit(1);
-			}
-		}
-	}
+	login();
+	return 0;
 }
